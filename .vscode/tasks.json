@@ -1,0 +1,48 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "StartPhpServer",
+            "type": "shell",
+            "command": "php",
+            "args": [
+                "-S",
+                "localhost:8080",
+                "-e",
+                "-t",
+                "${workspaceFolder}/public"
+            ],
+            "isBackground": true,
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "StopPhpServer",
+            "type": "shell",
+            "command": "pkill",
+            "args": [
+                "-f",
+                "^php -S localhost:8080 -e -t "
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "promptOnClose": false,
+            "problemMatcher": []
+        }
+    ]
+}
