@@ -22,25 +22,32 @@ $title = 'Login';
 require __DIR__ . '/_header.php';
 ?>
 
-<h1>Login</h1>
-
-<form method="post">
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" value="<?php echo htmlspecialchars($username, ENT_QUOTES) ?>">
+<div class="row align-items-center justify-content-center">
+    <div class="col-4">
+        <h1 class="text-center">Login</h1>
     </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password">
+</div>
+<div class="row align-items-center justify-content-center">
+    <div class="col-4">
+        <form method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" class="form-control" value="<?php echo htmlspecialchars($username, ENT_QUOTES) ?>">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" class="form-control">
+            </div>
+        <?php if ($_SERVER['REQUEST_METHOD'] != 'GET') { ?>
+            <div>
+                <p class="text-center text-danger">Invalid username or password.</p>
+            </div>
+        <?php } ?>
+            <div class="form-group text-center">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
-<?php if ($_SERVER['REQUEST_METHOD'] != 'GET') { ?>
-    <div>
-        <span>Invalid username or password.</span>
-    </div>
-<?php } ?>
-    <div>
-        <button type="submit">Submit</button>
-    </div>
-</form>
+</div>
 
 <?php require __DIR__ . '/_footer.php'; ?>
