@@ -16,9 +16,9 @@ $urlMap = [
 
 $pathInfo = $_SERVER['PATH_INFO'] ?? '/';
 if (isset($urlMap[$pathInfo])) {
-    require(__DIR__ . '/../pages/' . $urlMap[$pathInfo]);
+    require __DIR__ . '/../pages/' . $urlMap[$pathInfo];
 } else {
     http_response_code(404);
-    require(__DIR__ . '/../pages/404.php');
+    require __DIR__ . '/../pages/404.php';
     exit;
 }

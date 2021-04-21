@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] != 'GET') {
 }
 
 $title = 'Login'; 
-include(__DIR__ . '/_header.php'); 
+require __DIR__ . '/_header.php';
 ?>
 
 <h1>Login</h1>
@@ -43,4 +43,4 @@ include(__DIR__ . '/_header.php');
     </div>
 </form>
 
-<?php include(__DIR__ . '/_footer.php'); ?>
+<?php require __DIR__ . '/_footer.php'; ?>
