@@ -33,13 +33,14 @@
                 "-f",
                 "^php -S localhost:8080 -e -t "
             ],
+            "isBackground": true,
             "presentation": {
                 "echo": true,
                 "reveal": "never",
                 "focus": false,
                 "panel": "shared",
                 "showReuseMessage": false,
-                "clear": false
+                "clear": true
             },
             "promptOnClose": false,
             "problemMatcher": []
