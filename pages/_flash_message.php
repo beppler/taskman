@@ -1,10 +1,10 @@
+<?php if (isset($_SESSION['message'])) { ?>
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+    <?php echo htmlspecialchars($_SESSION['message'], ENT_QUOTES); ?>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<?php } ?>
 <?php
-if (isset($_SESSION['message'])) {
-    ?>
-    <div class="alert alert-primary" role="alert"><?php
-        echo htmlspecialchars($_SESSION['message'], ENT_QUOTES);
-    ?></div>
-    <?php
-
-    unset($_SESSION['message']);
-}
+unset($_SESSION['message']);

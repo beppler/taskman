@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="<?php echo BASE_URL . '/taskman.css' ?>"
 </head>
 <body>
-    <?php require __DIR__ . '/_flash_message.php'; ?>
     <div class="container-fluid h-100">
         <nav class="navbar navbar-expand-lg bg-light">
             <ul class="navbar-nav">
@@ -31,3 +30,4 @@
                 <?php } ?>
             </ul>
         </nav>
+        <?php require __DIR__ . '/_flash_message.php'; ?>
