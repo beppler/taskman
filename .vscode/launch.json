@@ -5,10 +5,33 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Listen for Xdebug",
+            "name": "Launch Development Server (Xdebug 3)",
             "type": "php",
             "request": "launch",
+            "runtimeExecutable": "${env:HOME}/.php/current/php",
+            "program": "${workspaceFolder}/.vscode/debug-router.php",
+            "runtimeArgs": [
+                "-S", "localhost:8080",
+                "-e",
+                "-t", "${workspaceFolder}/public",
+                "-d", "xdebug.mode=debug",
+                "-d", "xdebug.start_with_request=yes"
+            ],
+            "port": 9003
+        },
+        {
+            "name": "Launch Development Server (Xdebug 2)",
+            "type": "php",
+            "request": "launch",
+            "program": "${workspaceFolder}/.vscode/debug-router.php",
+            "runtimeArgs": [
+                "-S", "localhost:8080",
+                "-e",
+                "-t", "${workspaceFolder}/public",
+                "-d", "xdebug.remote_enable=1",
+                "-d", "xdebug.remote_autostart=1"
+            ],
             "port": 9000
-        }
+        },
     ]
 }
