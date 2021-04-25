@@ -1,24 +1,6 @@
 <?php
 declare(strict_types=1);
 
-define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT']);
+require_once __DIR__ . '/../app/config.php';
 
-session_start();
-
-$urlMap = [
-    '/' => 'home.php',
-    '/login' => 'login.php',
-    '/logout' => 'logout.php',
-    '/tasks' => 'tasks.php',
-    '/info' => 'info.php'
-];
-
-
-$pathInfo = $_SERVER['PATH_INFO'] ?? '/';
-if (isset($urlMap[$pathInfo])) {
-    require __DIR__ . '/../app/' . $urlMap[$pathInfo];
-} else {
-    http_response_code(404);
-    require __DIR__ . '/../app/404.php';
-    exit;
-}
+require APP_DIR . '/routes.php';

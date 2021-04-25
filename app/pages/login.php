@@ -4,6 +4,9 @@ $users = [
     'carlos' => '$2y$10$V5eZWuKbZ7VJa2MbKjrZs.frpXLKzXHTjW4oDkPuiYUn118Y5LwKu' # beppler
 ];
 
+$username = '';
+$password = '';
+
 $formErrors = [];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
