@@ -1,4 +1,3 @@
-<?php $title = $title ?? 'Task Manager' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
