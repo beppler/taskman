@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (isset($passwordHash) && password_verify($password, $passwordHash)) {
                 $_SESSION['authenticated_user'] = $username;
                 $_SESSION['message'] = 'User ' . $username .' is authenticated.';
-                header('Location: ' . BASE_URL . '/tasks');
+                header('Location: ' . BASE_URL . 'tasks');
                 exit;
             }
         }
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $title = 'Login'; 
-require __DIR__ . '/_header.php';
+require(__DIR__ . '/_header.php');
 ?>
 
 <div class="row align-items-center justify-content-center">
@@ -61,4 +61,4 @@ require __DIR__ . '/_header.php';
     </div>
 </div>
 
-<?php require __DIR__ . '/_footer.php'; ?>
+<?php require(__DIR__ . '/_footer.php'); ?>
