@@ -8,7 +8,6 @@
             "name": "Launch Development Server (Xdebug 3)",
             "type": "php",
             "request": "launch",
-            "runtimeExecutable": "${env:HOME}/.php/current/php",
             "program": "${workspaceFolder}/.vscode/debug-router.php",
             "runtimeArgs": [
                 "-S", "localhost:8080",
