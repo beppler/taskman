@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 require_once(realpath(__DIR__ . '/../app/config.php'));
 
+require_once(realpath(__DIR__ . '/../app/bootstrap.php'));
+
 require_once(APP_DIR . '/routes.php');
 
 $title = 'Task Manager';
