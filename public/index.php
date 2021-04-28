@@ -1,9 +1,11 @@
 <?php
 declare(strict_types=1);
 
-require_once(realpath(__DIR__ . '/../app/config.php'));
+require_once(__DIR__ . '/../app/config.php');
 
-require_once(realpath(__DIR__ . '/../app/bootstrap.php'));
+require_once(APP_DIR . '/database.php');
+
+require_once(APP_DIR . '/bootstrap.php');
 
 require_once(APP_DIR . '/routes.php');
 
