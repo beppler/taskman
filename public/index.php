@@ -1,13 +1,15 @@
 <?php
 declare(strict_types=1);
 
-require_once(__DIR__ . '/../app/config.php');
+require_once(__DIR__ . '/../app/bootstrap.php');
 
 require_once(APP_DIR . '/database.php');
 
-require_once(APP_DIR . '/bootstrap.php');
-
 require_once(APP_DIR . '/routes.php');
+
+$database = new Database(DATA_DIR);
+
+$database->initialize();
 
 $title = 'Task Manager';
 
@@ -17,5 +19,4 @@ if (isset($urlMap[$pathInfo])) {
 } else {
     http_response_code(404);
     require(APP_DIR . '/pages/404.php');
-    exit;
 }
