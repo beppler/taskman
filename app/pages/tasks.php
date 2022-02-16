@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION['authenticated_user'])) {
+if (!isset($_SESSION['user'])) {
     header('Location: ' . BASE_URL . '/login');
     exit;
 }

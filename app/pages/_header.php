@@ -18,9 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo BASE_URL. '/tasks' ?>">Tasks</a>
                 </li>
-                <?php if (isset($_SESSION['authenticated_user'])) { ?>
+                <?php if (isset($_SESSION['user'])) { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo BASE_URL . '/logout' ?>">Log out (<?php echo $_SESSION['authenticated_user']; ?>)</a>
+                        <a class="nav-link" href="<?php echo BASE_URL . '/logout' ?>">Log out (<?php echo $_SESSION['user']; ?>)</a>
                     </li>
                 <?php } else { ?>
                     <li class="nav-item">

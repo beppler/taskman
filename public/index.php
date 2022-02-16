@@ -14,6 +14,7 @@ $database->initialize();
 $title = 'Task Manager';
 
 $pathInfo = $_SERVER['PATH_INFO'] ?? '/';
+
 if (isset($urlMap[$pathInfo])) {
     require(APP_DIR . $urlMap[$pathInfo]);
 } else {

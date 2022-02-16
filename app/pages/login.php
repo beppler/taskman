@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($users[$username])) {
             $passwordHash = $users[$username];
             if (isset($passwordHash) && password_verify($password, $passwordHash)) {
-                $_SESSION['authenticated_user'] = $username;
+                $_SESSION['user'] = $username;
                 $_SESSION['message'] = 'User ' . $username .' is authenticated.';
                 header('Location: ' . BASE_URL . 'tasks');
                 exit;
