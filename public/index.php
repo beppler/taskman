@@ -15,4 +15,4 @@ $title = 'Task Manager';
 
 $pathInfo = $_SERVER['PATH_INFO'] ?? '/';
 
-Router->execute($pathInfo);
+Router::execute($pathInfo);
