@@ -5,7 +5,7 @@ require_once(__DIR__ . '/../app/bootstrap.php');
 
 require_once(APP_DIR . '/database.php');
 
-require_once(APP_DIR . '/routes.php');
+require_once(APP_DIR . '/router.php');
 
 $database = new Database(DATA_DIR);
 
@@ -15,9 +15,4 @@ $title = 'Task Manager';
 
 $pathInfo = $_SERVER['PATH_INFO'] ?? '/';
 
-if (isset($urlMap[$pathInfo])) {
-    require(APP_DIR . $urlMap[$pathInfo]);
-} else {
-    http_response_code(404);
-    require(APP_DIR . '/pages/404.php');
-}
+Router->execute($pathInfo);
